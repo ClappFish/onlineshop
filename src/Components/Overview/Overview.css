@@ -1,0 +1,117 @@
+.Overview{
+
+}
+
+.IconCart{
+    padding-top: 100px;
+    position: fixed;
+    font-size: 8pt;
+    margin-top: 1px;
+    margin-right: 2%;
+    top:0;
+    right:0;
+}
+
+.Products{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 5%;
+    justify-content: center;
+}
+
+.productImage{
+    justify-content: center;
+    padding: 25px;
+    width: 21%;
+}
+
+.productImage:hover{
+    transform: scale(1.03);
+    -webkittransform:scale(1.03);
+    -moz-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Small screen / Tablet / 760 px to 991 px*/
+@media only screen and (max-width: 991px) {
+    .IconCart{
+        padding-top: 100px;
+        position: fixed;
+        font-size: 8pt;
+        margin-top: 1px;
+        margin-right: 2%;
+        top:0;
+        right:0;
+    }
+
+    .Products{
+        width: 92%;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 5%;
+        justify-content: center;
+    }
+
+    .productImage{
+        justify-content: center;
+        padding: 25px;
+        width: 25%;
+    }
+}
+
+/* Smaller screen / tablet+phone / 480px to 759px */
+@media (max-width: 759px) {
+    .IconCart {
+        padding-top: 100px;
+        position: fixed;
+        font-size: 8pt;
+        margin-top: 1px;
+        margin-right: 2%;
+        top: 0;
+        right: 0;
+    }
+
+    .Products {
+        width: 92%;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 10%;
+        justify-content: center;
+    }
+
+    .productImage {
+        justify-content: center;
+        padding: 25px;
+        width: 40%;
+    }
+}
+
+/* Extra small screen / smartphone / 280px to 479px */
+@media (max-width: 550px) {
+    .IconCart{
+        padding-top: 100px;
+        position: fixed;
+        font-size: 8pt;
+        margin-top: 1px;
+        margin-right: 2%;
+        top:0;
+        right:0;
+    }
+
+    .Products{
+        width: 92%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 5%;
+        justify-content: center;
+    }
+
+    .productImage{
+        justify-content: center;
+        padding: 20px;
+        width: 39%;
+    }
+}

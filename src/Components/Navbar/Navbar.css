@@ -1,0 +1,108 @@
+.IconCart{
+    display: flex;
+    align-items: flex-end;
+}
+
+.menuButton{
+    background-color: black;
+}
+
+.navbar {
+    height: 65px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+}
+
+.nav-menu {
+    background-color: #333333;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.nav-text a:hover {
+    background-color: #1a83ff;
+}
+
+.nav-menu-items {
+    width: 100%;
+}
+
+.navbar-toggle {
+    background-color: #333333;
+    width: 100px;
+    height: 80px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+span {
+    margin-left: 16px;
+}
+
+ul{
+    padding-inline-start: 13%;
+}
+
+/* Small screen / Tablet / 760 px to 991 px*/
+@media only screen and (max-width: 991px) {
+    .nav-menu {
+        width: 30%;
+    }
+}
+
+/* Smaller screen / tablet+phone / 480px to 759px */
+@media (max-width: 759px) {
+    .nav-menu {
+        width: 40%;
+    }
+}
+
+/* Extra small screen / smartphone / 280px to 479px */
+@media (max-width: 479px) {
+    .nav-menu {
+        width: 50%;
+    }
+
+}
