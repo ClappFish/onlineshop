@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css';
+import './App.scss';
 import "./Components/Overview/Overview";
 import Profile from "./Components/Profile/Profile";
 import Overview from "./Components/Overview/Overview";
@@ -12,10 +12,10 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Login from "./Components/Login/Login";
-import Registration from "./Components/Login/Registration";
+import Login from "./Components/Startpages/Login";
+import Register from "./Components/Startpages/Register";
 
-function App() {
+export function App() {
 
     const [login, setLogin] = React.useState(false)
 
@@ -34,27 +34,28 @@ function App() {
         return (
             <Router>
                 <Switch>
-                    <Route path="/product">
-                        <ProductPage/>
+                    <Route path="/profile">
+                        <Profile/>
                     </Route>
                     <Route path="/cart">
                         <Cart/>
                     </Route>
-                    <Route path="/profile">
-                        <Profile/>
+                    <Route path="/product">
+                        <ProductPage/>
                     </Route>
                     <Route path="/">
                         <Overview/>
                     </Route>
                 </Switch>
             </Router>
-        )}
+        );
+}
     else {
-            return (
+        return (
             <Router>
                 <Switch>
                     <Route path="/reg.">
-                        <Registration/>
+                        <Register/>
                     </Route>
                     <Route path="/">
                         <Login setLoggedIn={setLoggedIn} isVerifiedCookie={isVerifiedCookie()}/>

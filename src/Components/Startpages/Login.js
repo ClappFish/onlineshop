@@ -39,18 +39,19 @@ function Login({setLoggedIn}) {
                 <div className="form">
                     <form className="userNameInput">
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
-                            <input type="email"
-                                   className="form-control"
-                                   id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   placeholder="Enter email"
-                                   onChange={e => setEMail(e.target.value)}
+                            <label>Email address</label>
+                            <input
+                                type="email"
+                                className="input"
+                                value={eMail}
+                                placeholder="Enter email"
+                                onChange={e => setEMail(e.target.value)}
                             />
                         </div>
                         <div className="form-group">
+                            <label>Password</label>
                             <input
-                                type="text"
+                                type="password"
                                 className="input"
                                 value={password}
                                 placeholder="Password"

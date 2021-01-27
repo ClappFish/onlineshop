@@ -2,6 +2,7 @@ import React from 'react';
 
 import { MdPersonOutline, MdLocalGroceryStore, MdCardTravel} from "react-icons/md";
 
+
 export const SidebarData = [
     {
         title: 'Your Profile',

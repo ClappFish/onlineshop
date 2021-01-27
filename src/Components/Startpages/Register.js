@@ -25,6 +25,7 @@ function Register() {
             password: password,
         }).then((response) => {console.log(response)})
         window.location.href = "/";
+        alert("Successfully Registered")
     }
 
     return (
@@ -37,8 +38,9 @@ function Register() {
                 <div className="form">
                     <form className="userNameInput">
                         <div className="form-group">
+                            <label>Username</label>
                             <input
-                                type="text"
+                                type="name"
                                 className="input"
                                 value={userName}
                                 placeholder="Username"
@@ -46,8 +48,9 @@ function Register() {
                             />
                         </div>
                         <div className="form-group">
+                            <label>Email</label>
                             <input
-                                type="text"
+                                type="email"
                                 className="input"
                                 value={eMail}
                                 placeholder="E-Mail"
@@ -55,8 +58,9 @@ function Register() {
                             />
                         </div>
                         <div className="form-group">
+                            <label>Password</label>
                             <input
-                                type="text"
+                                type="password"
                                 className="input"
                                 value={password}
                                 placeholder="Password"

@@ -7,6 +7,11 @@
     background-color: black;
 }
 
+h1.myShop{
+    margin-left: 37%;
+    margin-right: 50%;
+}
+
 .navbar {
     height: 65px;
     display: flex;
@@ -17,8 +22,8 @@
 }
 
 .menu-bars {
-    margin-left: 2rem;
-    font-size: 2rem;
+    margin-left: 2%;
+    font-size: 200%;
     background: none;
 }
 

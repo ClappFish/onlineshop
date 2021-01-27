@@ -5,7 +5,6 @@ import * as AiIcons from 'react-icons/ai';
 import {IconContext} from 'react-icons';
 import {SidebarData} from './SidebarIcons';
 import './Navbar.css';
-import cart from "../Pictures/shopping-cart-outline_icon-icons.com_56126.png"
 
 
 function Navbar() {
@@ -20,6 +19,7 @@ function Navbar() {
                     <Link to='#' className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} className="menuButton"/>
                     </Link>
+                    <h1 className="myShop">MyShop.com</h1>
                 </div>
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>

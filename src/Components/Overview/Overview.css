@@ -12,18 +12,28 @@
     right:0;
 }
 
-.Products{
+.allProducts{
     width: 92%;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 5%;
-    justify-content: center;
+    padding-top: 3%;
+
+}
+.placeholderProduct{
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+    height: 25%;
+}
+.placeholderImg{
+    width: 40%;
+    height: 20%;
 }
 
 .productImage{
-    justify-content: center;
-    padding: 25px;
-    width: 21%;
+    margin-top: 25px;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 .productImage:hover{
@@ -31,10 +41,18 @@
     -webkittransform:scale(1.03);
     -moz-transform: scale(1.03);
     -o-transform: scale(1.03);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-
+.productName{
+    display: inline;
+    width: 40%;
+    margin-left: 5%;
+}
+.productPrice{
+    margin-left: 5%;
+    margin-right: 15%;
+    width: 30%;
+}
 /* Small screen / Tablet / 760 px to 991 px*/
 @media only screen and (max-width: 991px) {
     .IconCart{
