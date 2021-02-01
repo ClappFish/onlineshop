@@ -24,6 +24,7 @@ function Register() {
             eMail: eMail,
             password: password,
         }).then((response) => {console.log(response)})
+        alert("successfull registered");
         window.location.href = "/";
     }
 
