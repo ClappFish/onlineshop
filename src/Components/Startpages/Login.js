@@ -8,8 +8,8 @@ import {Link} from "react-router-dom";
 
 
 function Login({setLoggedIn}) {
-    const data_api_uri = "worker";
-    const data_api_port = "8000";
+    const data_api_uri = "localhost";
+    const data_api_port = "8085";
 
     const [eMail, setEMail] = React.useState("")
     const [password, setPassword] = React.useState("")

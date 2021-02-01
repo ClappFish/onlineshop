@@ -6,8 +6,8 @@ import './Pofile.css'
 import Header from "../Headermenu/Header";
 
 function Profile(){
-    const data_api_uri = "worker";
-    const data_api_port = "8000";
+    const data_api_uri = "localhost";
+    const data_api_port = "8085";
 
     const userId = getUserId();
 

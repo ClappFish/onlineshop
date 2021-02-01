@@ -1,24 +1,13 @@
 version: "3.4"
 services:
   worker:
+    container_name: worker
     image: gitlab.diva-e.com:5000/fynn.fischbach/onlineshop-backend:latest
     ports:
-      - 8000:8085
-    networks:
-      onlineshop: {}
+      - 8085:8085
   frontend:
     image: gitlab.diva-e.com:5000/fynn.fischbach/onlineshop:latest
     ports:
       - 3000:3000
-    networks:
-      onlineshop: {}
-    dns:
-      - 8.8.8.8
-    links:
-      - "worker:worker"
-networks:
-  onlineshop:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.23.0.0/24"
+    depends_on:
+      - worker

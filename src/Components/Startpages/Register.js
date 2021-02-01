@@ -7,8 +7,8 @@ import {Link} from "react-router-dom";
 import {useCookies} from "react-cookie";
 
 function Register() {
-    const data_api_uri = "worker";
-    const data_api_port = "8000";
+    const data_api_uri = "localhost";
+    const data_api_port = "8085";
 
     const [userName, setUserName] = React.useState("")
     const [eMail, setEMail] = React.useState("")

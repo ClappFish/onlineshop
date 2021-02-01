@@ -1,0 +1,26 @@
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_HOST: "tcp://docker:2375"
+  CI_REGISTRY: gitlab.diva-e.com:5000
+  BUILD_IMAGE: docker:18.09.0
+
+services:
+  - name: docker:dind
+
+
+#### STAGES DECLARATION ###
+stages:
+  - build_dockerimages
+
+
+#### JOBS #####
+buildfrontend: #jobname
+  stage: build_dockerimages #welche stage
+  image: $BUILD_IMAGE
+  tags:
+    - docker_runner
+  script:
+    - docker login -u pipelineuser -p $REGISTRY_PW $CI_REGISTRY
+    - docker build -t gitlab.diva-e.com:5000/fynn.fischbach/onlineshop .
+    - docker push gitlab.diva-e.com:5000/fynn.fischbach/onlineshop

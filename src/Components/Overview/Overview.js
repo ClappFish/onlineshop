@@ -10,8 +10,8 @@ import ProductItems from "../ProductItems/ProductItems";
 
 function Overview() {
 
-    const data_api_uri = "backend";
-    const data_api_port = "8000";
+    const data_api_uri = "localhost";
+    const data_api_port = "8085";
 
     const userId = getUserId();
 
