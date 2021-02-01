@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 
 function Login({setLoggedIn}) {
     const data_api_uri = "localhost";
-    const data_api_port = "8080";
+    const data_api_port = "8000";
 
     const [eMail, setEMail] = React.useState("")
     const [password, setPassword] = React.useState("")
@@ -20,13 +20,8 @@ function Login({setLoggedIn}) {
             eMail: eMail,
             password: password,
         }).then((response) => {
-            if (response.data === 0) {
-                alert("Wrong Username or Password")
-            }
-            else if (response.data !== 0){
                 setLoggedIn(response.data);
-            }
-        })
+        }).catch(() => window.alert("Falsche Zugangsdaten"))
     }
 
     return (

@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  backend:
+    image: localhost:5000/onlineshopbackend:latest
+    ports:
+      - 8000:8085
+  frontend:
+    image: localhost:5000/onlineshop-frontend:latest
+    ports:
+      - 3000:3000

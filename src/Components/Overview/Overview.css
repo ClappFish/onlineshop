@@ -53,6 +53,11 @@
     margin-right: 15%;
     width: 30%;
 }
+
+.setFavoriteButton{
+}
+
+
 /* Small screen / Tablet / 760 px to 991 px*/
 @media only screen and (max-width: 991px) {
     .IconCart{

@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import Login from "./Components/Startpages/Login";
 import Register from "./Components/Startpages/Register";
+import Favorites from "./Components/Favorites/Favorites";
 
 export function App() {
 
@@ -36,6 +37,9 @@ export function App() {
                 <Switch>
                     <Route path="/profile">
                         <Profile/>
+                    </Route>
+                    <Route path="/favorites">
+                        <Favorites/>
                     </Route>
                     <Route path="/cart">
                         <Cart/>

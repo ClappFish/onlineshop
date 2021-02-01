@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.Headline{
+    margin-top: 65px;
+}
+
+.allProducts{
+    width: 92%;
+    padding-top: 3%;
+
+}
+
+.placeholderProduct{
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+    height: 25%;
+}
+.placeholderImg{
+    width: 40%;
+    height: 20%;
+}
+
+.productImage{
+    margin-top: 25px;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.productImage:hover{
+    transform: scale(1.03);
+    -webkittransform:scale(1.03);
+    -moz-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+.productName{
+    display: inline;
+    width: 40%;
+    margin-left: 5%;
+}
+.productPrice{
+    margin-left: 5%;
+    margin-right: 15%;
+    width: 30%;
+}
