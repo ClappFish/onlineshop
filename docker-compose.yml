@@ -1,10 +1,24 @@
-version: "3.9"
+version: "3.4"
 services:
-  backend:
-    image: localhost:5000/onlineshopbackend:latest
+  worker:
+    image: gitlab.diva-e.com:5000/fynn.fischbach/onlineshop-backend:latest
     ports:
       - 8000:8085
+    networks:
+      onlineshop: {}
   frontend:
-    image: localhost:5000/onlineshop-frontend:latest
+    image: gitlab.diva-e.com:5000/fynn.fischbach/onlineshop:latest
     ports:
       - 3000:3000
+    networks:
+      onlineshop: {}
+    dns:
+      - 8.8.8.8
+    links:
+      - "worker:worker"
+networks:
+  onlineshop:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.23.0.0/24"

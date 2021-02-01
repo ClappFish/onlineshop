@@ -7,8 +7,8 @@ import {Link} from "react-router-dom";
 import {useCookies} from "react-cookie";
 
 function Register() {
-    const data_api_uri = "localhost";
-    const data_api_port = "8080";
+    const data_api_uri = "worker";
+    const data_api_port = "8000";
 
     const [userName, setUserName] = React.useState("")
     const [eMail, setEMail] = React.useState("")
@@ -25,7 +25,6 @@ function Register() {
             password: password,
         }).then((response) => {console.log(response)})
         window.location.href = "/";
-        alert("Successfully Registered")
     }
 
     return (

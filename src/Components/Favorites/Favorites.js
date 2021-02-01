@@ -6,7 +6,7 @@ import Header from "../Headermenu/Header";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 
 function Favorites() {
-    const data_api_uri = "localhost";
+    const data_api_uri = "backend";
     const data_api_port = "8000";
 
     const userId = getUserId();
