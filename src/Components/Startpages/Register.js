@@ -20,6 +20,8 @@ function Register() {
 
 
     function addUser() {
+        getUri()
+        getPort()
         removeCookie("userId", {path:'/'})
         axios.post(`http://${data_api_uri}:${data_api_port}/adduser`, {
             userName: userName,

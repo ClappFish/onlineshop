@@ -19,6 +19,8 @@ function Favorites() {
     }, []);
 
     function getFavorites() {
+        getUri()
+        getPort()
         axios.get(`http://${data_api_uri}:${data_api_port}/${userId}/getfavorites`).then((response) => {
             setFavoriteProducts(response.data);
         })

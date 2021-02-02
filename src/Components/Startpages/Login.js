@@ -15,6 +15,8 @@ function Login({setLoggedIn}) {
     const [password, setPassword] = React.useState("")
 
     function checkUser() {
+        getUri()
+        getPort()
         axios.post(`http://${data_api_uri}:${data_api_port}/checkuser`, {
             userName: "DefaultUserName",
             eMail: eMail,

@@ -28,6 +28,8 @@ function Profile(){
     }
 
     function getUserData() {
+        getUri()
+        getPort()
         axios.get(`http://${data_api_uri}:${data_api_port}/getAccountName/${userId}`).then((response) => {
             setEMail(response.data);
         });
