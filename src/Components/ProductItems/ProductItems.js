@@ -8,8 +8,8 @@ function ProductItems({product, setFavorite, setUnFavorite, addToCart}) {
     return (
         <div className="container">
             <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)}/>
-            <IoCartOutline className="addToCart" onClick={() => addToCart(product)}/>
             <IoHeartDislikeOutline className="setUnFavoriteButton" onClick={() => setUnFavorite(product)}/>
+            <IoCartOutline className="addToCart" onClick={() => addToCart(product)}/>
         </div>
     )
 }
