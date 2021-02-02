@@ -19,7 +19,7 @@ function Cart() {
     }, []);
 
     function getCartProducts() {
-        axios.get(`http://${data_api_uri}:${data_api_port}/${userId}/getCart`).then((response) => {
+        axios.get(`http://${data_api_uri}:${data_api_port}/${userId}/getcart`).then((response) => {
             setCartProducts(response.data);
         })
     }
