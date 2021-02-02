@@ -1,3 +1,6 @@
 .setFavoriteButton:hover{
     background-color: red;
 }
+.addToCart:hover{
+    background-color: orange;
+}

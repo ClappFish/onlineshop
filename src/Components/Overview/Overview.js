@@ -38,7 +38,7 @@ function Overview() {
         });
     }
 
-    const setInCart = product => {
+    const addToCart = product => {
         axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/addtocart`,{
             ...product
         }).then(() => {
@@ -103,10 +103,7 @@ function Overview() {
                                     <ProductItems
                                         product={product}
                                         setFavorite={setFavorite}
-                                    />
-                                    <ProductItems
-                                        product={product}
-                                        setInCart={setInCart}
+                                        addToCart={addToCart}
                                     />
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
