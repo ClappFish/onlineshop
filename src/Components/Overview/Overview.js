@@ -38,6 +38,15 @@ function Overview() {
         });
     }
 
+    const setInCart = product => {
+        axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/addtocart`,{
+            ...product
+        }).then(() => {
+            getProductData();
+        }).catch(() => {
+        });
+    }
+
 
     /*
         const unFavorite = index => {
@@ -57,20 +66,6 @@ function Overview() {
             })
         }
 
-        const addToCart = index => {
-            const cartProducts = [...products];
-            // eslint-disable-next-line array-callback-return
-            cartProducts.map((product) => {
-                if (index === product.id) {
-                    axios.post(`http://${data_api_uri}:${data_api_port}/addtocart/${userId}/${product.id}`, {
-                        productId: product.id,
-                        isFavorite: product.isFavorite,
-                        isInCart: true,
-                    }).catch(() => {
-                    });
-                }
-            })
-        }
 
         const deleteFromCart = index => {
             const cartProducts = [...products];
@@ -108,6 +103,10 @@ function Overview() {
                                     <ProductItems
                                         product={product}
                                         setFavorite={setFavorite}
+                                    />
+                                    <ProductItems
+                                        product={product}
+                                        setInCart={setInCart}
                                     />
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
