@@ -38,6 +38,15 @@ function Overview() {
         });
     }
 
+    const setUnFavorite = product => {
+        axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/unfavorite`, {
+            ...product
+        }).then(() => {
+            getProductData()
+        }).catch(() => {
+        });
+    }
+
     const addToCart = product => {
         axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/addtocart`,{
             ...product
@@ -104,6 +113,7 @@ function Overview() {
                                         product={product}
                                         setFavorite={setFavorite}
                                         addToCart={addToCart}
+                                        setUnFavoite={setUnFavorite}
                                     />
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
@@ -118,3 +128,4 @@ function Overview() {
 }
 
 export default Overview;
+export{setUnFavorite}
