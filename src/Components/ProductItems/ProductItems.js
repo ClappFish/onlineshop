@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductItems.css";
-import {IoHeartOutline} from "react-icons/io5";
+import {IoHeartOutline, IoCartOutline} from "react-icons/io5";
 
 function ProductItems({product, setFavorite, addtocart}) {
 
@@ -9,7 +9,7 @@ function ProductItems({product, setFavorite, addtocart}) {
 
         <div className="container">
             <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)}/>
-
+            <IoCartOutline className="addToCart" onClick={() => addtocart(product)}/>
         </div>
     )
 }
