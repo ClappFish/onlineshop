@@ -4,12 +4,12 @@ import axios from "axios";
 import {getUserId} from "../../UserIdHandler";
 import './Pofile.css'
 import Header from "../Headermenu/Header";
-import {getPort, getUri} from "../../UrlHandler";
+import * as constUrl from "../../UrlHandler";
 
 function Profile(){
 
-    const data_api_uri = getUri();
-    const data_api_port = getPort();
+    const data_api_uri = constUrl.data_api_uri;
+    const data_api_port = constUrl.data_api_port;
 
     const userId = getUserId();
 
@@ -28,8 +28,6 @@ function Profile(){
     }
 
     function getUserData() {
-        getUri()
-        getPort()
         axios.get(`http://${data_api_uri}:${data_api_port}/getAccountName/${userId}`).then((response) => {
             setEMail(response.data);
         });

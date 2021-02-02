@@ -1,10 +1,2 @@
-function getPort(){
-    return "8085"
-}
-
-function getUri(){
-    return "localhost"
-}
-
-export {getPort}
-export {getUri}
+export const data_api_uri = "localhost";
+export const data_api_port = "8085"

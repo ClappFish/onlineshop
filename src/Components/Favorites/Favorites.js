@@ -4,11 +4,11 @@ import "./Favorites.css";
 import {getUserId} from "../../UserIdHandler";
 import Header from "../Headermenu/Header";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
-import {getPort, getUri} from "../../UrlHandler";
+import * as constUrl from "../../UrlHandler";
 
 function Favorites() {
-    const data_api_uri = getUri();
-    const data_api_port = getPort();
+    const data_api_uri = constUrl.data_api_uri;
+    const data_api_port = constUrl.data_api_port;
 
     const userId = getUserId();
 
@@ -19,8 +19,6 @@ function Favorites() {
     }, []);
 
     function getFavorites() {
-        getUri()
-        getPort()
         axios.get(`http://${data_api_uri}:${data_api_port}/${userId}/getfavorites`).then((response) => {
             setFavoriteProducts(response.data);
         })

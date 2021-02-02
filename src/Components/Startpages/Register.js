@@ -5,12 +5,12 @@ import '../../App.scss';
 import axios from "axios";
 import {Link} from "react-router-dom";
 import {useCookies} from "react-cookie";
-import {getPort, getUri} from "../../UrlHandler";
+import * as constUrl from "../../UrlHandler";
 
 function Register() {
 
-    const data_api_uri = getUri();
-    const data_api_port = getPort();
+    const data_api_uri = constUrl.data_api_uri;
+    const data_api_port = constUrl.data_api_port;
 
     const [userName, setUserName] = React.useState("")
     const [eMail, setEMail] = React.useState("")
@@ -20,8 +20,6 @@ function Register() {
 
 
     function addUser() {
-        getUri()
-        getPort()
         removeCookie("userId", {path:'/'})
         axios.post(`http://${data_api_uri}:${data_api_port}/adduser`, {
             userName: userName,

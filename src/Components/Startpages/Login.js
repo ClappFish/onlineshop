@@ -4,19 +4,18 @@ import './style.scss';
 import '../../App.scss';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import {getPort, getUri} from "../../UrlHandler";
+import * as constUrl from "../../UrlHandler";
 
 
 function Login({setLoggedIn}) {
-    const data_api_uri = getUri();
-    const data_api_port = getPort();
+    const data_api_uri = constUrl.data_api_uri;
+    const data_api_port = constUrl.data_api_port;
 
     const [eMail, setEMail] = React.useState("")
     const [password, setPassword] = React.useState("")
 
     function checkUser() {
-        getUri()
-        getPort()
+        console.log(data_api_uri, data_api_port)
         axios.post(`http://${data_api_uri}:${data_api_port}/checkuser`, {
             userName: "DefaultUserName",
             eMail: eMail,
