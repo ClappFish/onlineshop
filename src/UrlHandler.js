@@ -1,9 +1,9 @@
 function getPort(){
-    return "localhost"
+    return "8085"
 }
 
 function getUri(){
-    return "8085"
+    return "localhost"
 }
 
 export {getPort}
