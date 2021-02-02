@@ -1,7 +1,7 @@
 version: "3.4"
 services:
-  worker:
-    container_name: worker
+  back-end:
+    container_name: back-end
     image: gitlab.diva-e.com:5000/fynn.fischbach/onlineshop-backend:latest
     ports:
       - 8085:8085
@@ -10,4 +10,4 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - worker
+      - back-end
