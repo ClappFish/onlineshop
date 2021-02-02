@@ -5,10 +5,12 @@ import '../../App.scss';
 import axios from "axios";
 import {Link} from "react-router-dom";
 import {useCookies} from "react-cookie";
+import {getPort, getUri} from "../../UrlHandler";
 
 function Register() {
-    const data_api_uri = "localhost";
-    const data_api_port = "8085";
+
+    const data_api_uri = getUri();
+    const data_api_port = getPort();
 
     const [userName, setUserName] = React.useState("")
     const [eMail, setEMail] = React.useState("")

@@ -3,6 +3,7 @@ import "./Overview.css";
 import {Link} from "react-router-dom";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 import Header from "../Headermenu/Header";
+import {getPort, getUri} from "../../UrlHandler";
 import {getUserId} from "../../UserIdHandler";
 import cart from "../Pictures/shopping-cart-outline_icon-icons.com_56126.png";
 import axios from "axios";
@@ -10,8 +11,8 @@ import ProductItems from "../ProductItems/ProductItems";
 
 function Overview() {
 
-    const data_api_uri = "localhost";
-    const data_api_port = "8085";
+    const data_api_uri = getUri();
+    const data_api_port = getPort();
 
     const userId = getUserId();
 

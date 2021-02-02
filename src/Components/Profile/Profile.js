@@ -4,10 +4,12 @@ import axios from "axios";
 import {getUserId} from "../../UserIdHandler";
 import './Pofile.css'
 import Header from "../Headermenu/Header";
+import {getPort, getUri} from "../../UrlHandler";
 
 function Profile(){
-    const data_api_uri = "localhost";
-    const data_api_port = "8085";
+
+    const data_api_uri = getUri();
+    const data_api_port = getPort();
 
     const userId = getUserId();
 
