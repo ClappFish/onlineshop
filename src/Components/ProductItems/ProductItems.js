@@ -1,18 +1,16 @@
 import React from "react";
 import "./ProductItems.css";
-import { IoHeartOutline } from "react-icons/io5";
+import {IoHeartOutline} from "react-icons/io5";
 
-function ProductItems({product, setFavorite}){
+function ProductItems({product, setFavorite}) {
 
-console.log(product)
-    return(
+    console.log(product)
+    return (
 
         <div className="container">
-                <button>
-                    <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)} />
-                </button>
-
+            <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)}/>
         </div>
     )
 }
+
 export default ProductItems;
