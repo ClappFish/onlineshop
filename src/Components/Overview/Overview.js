@@ -128,4 +128,3 @@ function Overview() {
 }
 
 export default Overview;
-export{setUnFavorite}
