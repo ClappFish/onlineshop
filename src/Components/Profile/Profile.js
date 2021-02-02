@@ -29,10 +29,10 @@ function Profile(){
 
     function getUserData() {
         axios.get(`http://${data_api_uri}:${data_api_port}/getAccountName/${userId}`).then((response) => {
-            setEMail(response.data);
+            setUserName(response.data);
         });
         axios.get(`http://${data_api_uri}:${data_api_port}/getAccountMail/${userId}`).then((response) => {
-            setUserName(response.data);
+            setEMail(response.data);
         });
     }
 
