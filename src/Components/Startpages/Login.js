@@ -40,6 +40,7 @@ function Login({setLoggedIn}) {
                                 className="input"
                                 value={eMail}
                                 placeholder="Enter email"
+                                autoComplete="email"
                                 onChange={e => setEMail(e.target.value)}
                             />
                         </div>
@@ -50,6 +51,7 @@ function Login({setLoggedIn}) {
                                 className="input"
                                 value={password}
                                 placeholder="Password"
+                                autoComplete="current-password"
                                 onChange={e => setPassword(e.target.value)}
                             />
                         </div>

@@ -45,7 +45,8 @@ function Register() {
                                 type="name"
                                 className="input"
                                 value={userName}
-                                placeholder="Username"
+                                placeholder="Your Name"
+                                autoComplete="name"
                                 onChange={e => setUserName(e.target.value)}
                             />
                         </div>
@@ -56,6 +57,7 @@ function Register() {
                                 className="input"
                                 value={eMail}
                                 placeholder="E-Mail"
+                                autoComplete="email"
                                 onChange={e => setEMail(e.target.value)}
                             />
                         </div>
@@ -66,6 +68,7 @@ function Register() {
                                 className="input"
                                 value={password}
                                 placeholder="Password"
+                                autoComplete="new-password"
                                 onChange={e => setPassword(e.target.value)}
                             />
                         </div>
