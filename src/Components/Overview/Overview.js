@@ -86,8 +86,6 @@ function Overview() {
                                         product={product}
                                         setFavorite={setFavorite}
                                         addToCart={addToCart}
-                                        setUnFavoite={setUnFavorite}
-                                        deleteFromCart={deleteFromCart}
                                     />
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
