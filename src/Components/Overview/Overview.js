@@ -56,41 +56,14 @@ function Overview() {
         });
     }
 
-
-    /*
-        const unFavorite = index => {
-            const favoriteProducts = [...products];
-            // eslint-disable-next-line array-callback-return
-            favoriteProducts.map((product) => {
-                if (index === product.id) {
-                    axios.post(`http://${data_api_uri}:${data_api_port}/unfavorite/${userId}/${product.id}`, {
-                        productId: product.id,
-                        isFavorite: false,
-                        isInCart: product.isInCart,
-                    }).then(() => {
-                        getProductData();
-                    }).catch(() => {
-                    });
-                }
-            })
-        }
-
-
-        const deleteFromCart = index => {
-            const cartProducts = [...products];
-            // eslint-disable-next-line array-callback-return
-            cartProducts.map((product) => {
-                if (index === product.id) {
-                    axios.post(`http://${data_api_uri}:${data_api_port}/deletefromcart/${userId}/${product.id}`, {
-                        productId: product.id,
-                        isFavorite: product.isFavorite,
-                        isInCart: false,
-                    }).catch(() => {
-                    });
-                }
-            })
-        }
-    */
+    const deleteFromCart = product => {
+        axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/deletefromcart`, {
+            ...product
+        }).then(() => {
+            getProductData()
+        }).catch(() => {
+        });
+    }
 
     return (
         <div className="Overview">
@@ -114,6 +87,7 @@ function Overview() {
                                         setFavorite={setFavorite}
                                         addToCart={addToCart}
                                         setUnFavoite={setUnFavorite}
+                                        deleteFromCart={deleteFromCart}
                                     />
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>

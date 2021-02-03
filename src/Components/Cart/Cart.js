@@ -5,6 +5,7 @@ import {getUserId} from "../../UserIdHandler";
 import Header from "../Headermenu/Header";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 import * as constUrl from "../../UrlHandler";
+import ProductItems from "../ProductItems/ProductItems";
 
 function Cart() {
     const data_api_uri = constUrl.data_api_uri;
@@ -18,6 +19,7 @@ function Cart() {
         getCartProducts()
     }, []);
 
+
     function getCartProducts() {
         axios.get(`http://${data_api_uri}:${data_api_port}/${userId}/getcart`).then((response) => {
             setCartProducts(response.data);
@@ -27,6 +29,24 @@ function Cart() {
     function Headline(props) {
         console.log(props.text);
         return <h1 className="headline">{props.text}</h1>;
+    }
+
+    const setFavorite = product => {
+        axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/addfavorite`, {
+            ...product
+        }).then(() => {
+            getCartProducts()
+        }).catch(() => {
+        });
+    }
+
+    const deleteFromCart = product => {
+        axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/deletefromcart`, {
+            ...product
+        }).then(() => {
+            getCartProducts()
+        }).catch(() => {
+        });
     }
 
     return (
@@ -44,6 +64,11 @@ function Cart() {
                                 <img className="productImage" src={TestImage} alt="img"/>
                                 <h2>
                                     <div className="productName">{product.productName}</div>
+                                    <ProductItems
+                                        product={product}
+                                        setFavorite={setFavorite}
+                                        deleteFromCart={deleteFromCart}
+                                    />
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
                                 <br/>
