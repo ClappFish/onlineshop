@@ -6,6 +6,7 @@ import Header from "../Headermenu/Header";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 import * as constUrl from "../../UrlHandler";
 import ProductItems from "../ProductItems/ProductItems";
+import {IoCartOutline, IoHeartDislikeOutline} from "react-icons/io5";
 
 function Favorites() {
     const data_api_uri = constUrl.data_api_uri;
@@ -62,11 +63,8 @@ function Favorites() {
                                 <img className="productImage" src={TestImage} alt="img"/>
                                 <h2>
                                     <div className="productName">{product.productName}</div>
-                                    <ProductItems
-                                        product={product}
-                                        addToCart={addToCart}
-                                        setUnFavoite={setUnFavorite}
-                                    />
+                                    <IoHeartDislikeOutline className="setUnFavoriteButton" onClick={() => setUnFavorite(product)}/>
+                                    <IoCartOutline className="addToCart" onClick={() => addToCart(product)}/>
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
                                 <br/>

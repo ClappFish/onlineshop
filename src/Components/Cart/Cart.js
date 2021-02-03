@@ -5,7 +5,8 @@ import {getUserId} from "../../UserIdHandler";
 import Header from "../Headermenu/Header";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 import * as constUrl from "../../UrlHandler";
-import ProductItems from "../ProductItems/ProductItems";
+import {MdRemoveShoppingCart} from "react-icons/md";
+import {IoHeartOutline} from "react-icons/io5";
 
 function Cart() {
     const data_api_uri = constUrl.data_api_uri;
@@ -64,11 +65,8 @@ function Cart() {
                                 <img className="productImage" src={TestImage} alt="img"/>
                                 <h2>
                                     <div className="productName">{product.productName}</div>
-                                    <ProductItems
-                                        product={product}
-                                        setFavorite={setFavorite}
-                                        deleteFromCart={deleteFromCart}
-                                    />
+                                    <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)}/>
+                                    <MdRemoveShoppingCart className="deleteFromCart" onClick={() => deleteFromCart(product)}/>
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
                                 <br/>

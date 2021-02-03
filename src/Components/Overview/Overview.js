@@ -6,8 +6,8 @@ import Header from "../Headermenu/Header";
 import {getUserId} from "../../UserIdHandler";
 import cart from "../Pictures/shopping-cart-outline_icon-icons.com_56126.png";
 import axios from "axios";
-import ProductItems from "../ProductItems/ProductItems";
 import * as constUrl from "../../UrlHandler";
+import {IoCartOutline, IoHeartOutline} from "react-icons/io5";
 
 function Overview() {
 
@@ -38,29 +38,11 @@ function Overview() {
         });
     }
 
-    const setUnFavorite = product => {
-        axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/unfavorite`, {
-            ...product
-        }).then(() => {
-            getProductData()
-        }).catch(() => {
-        });
-    }
-
     const addToCart = product => {
         axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/addtocart`,{
             ...product
         }).then(() => {
             getProductData();
-        }).catch(() => {
-        });
-    }
-
-    const deleteFromCart = product => {
-        axios.post(`http://${data_api_uri}:${data_api_port}/${userId}/deletefromcart`, {
-            ...product
-        }).then(() => {
-            getProductData()
         }).catch(() => {
         });
     }
@@ -82,11 +64,8 @@ function Overview() {
                                 </Link>
                                 <h2>
                                     <div className="productName">{product.productName}</div>
-                                    <ProductItems
-                                        product={product}
-                                        setFavorite={setFavorite}
-                                        addToCart={addToCart}
-                                    />
+                                    <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)}/>
+                                    <IoCartOutline className="addToCart" onClick={() => addToCart(product)}/>
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
                                 <br/>
