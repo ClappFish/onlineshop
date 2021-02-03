@@ -2,10 +2,9 @@ import React, {useEffect} from "react";
 import axios from "axios";
 import "./Favorites.css";
 import {getUserId} from "../../UserIdHandler";
-import Header from "../Headermenu/Header";
+import Header from "../Navbar/Header";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 import * as constUrl from "../../UrlHandler";
-import ProductItems from "../ProductItems/ProductItems";
 import {IoCartOutline, IoHeartDislikeOutline} from "react-icons/io5";
 
 function Favorites() {
@@ -63,8 +62,10 @@ function Favorites() {
                                 <img className="productImage" src={TestImage} alt="img"/>
                                 <h2>
                                     <div className="productName">{product.productName}</div>
-                                    <IoHeartDislikeOutline className="setUnFavoriteButton" onClick={() => setUnFavorite(product)}/>
-                                    <IoCartOutline className="addToCart" onClick={() => addToCart(product)}/>
+                                    <div className="productStateButton">
+                                        <IoHeartDislikeOutline className="setUnFavoriteButton" onClick={() => setUnFavorite(product)}/>
+                                        <IoCartOutline className="addToCart" onClick={() => addToCart(product)}/>
+                                    </div>
                                     <div className="productPrice">{product.productPrice} €</div>
                                 </h2>
                                 <br/>

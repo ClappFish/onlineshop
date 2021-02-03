@@ -39,6 +39,14 @@
     -o-transform: scale(1.03);
 }
 
+.setUnFavoriteButton:hover{
+    background-color: red;
+}
+
+.addToCart:hover{
+    background-color: orange;
+}
+
 .productName{
     display: inline;
     width: 40%;

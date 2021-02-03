@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import axios from "axios";
 import "./Cart.css";
 import {getUserId} from "../../UserIdHandler";
-import Header from "../Headermenu/Header";
+import Header from "../Navbar/Header";
 import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 import * as constUrl from "../../UrlHandler";
 import {MdRemoveShoppingCart} from "react-icons/md";

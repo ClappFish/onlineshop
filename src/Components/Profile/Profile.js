@@ -3,7 +3,7 @@ import {useCookies} from "react-cookie";
 import axios from "axios";
 import {getUserId} from "../../UserIdHandler";
 import './Pofile.css'
-import Header from "../Headermenu/Header";
+import Header from "../Navbar/Header";
 import * as constUrl from "../../UrlHandler";
 
 function Profile(){

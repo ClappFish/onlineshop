@@ -2,3 +2,11 @@ h1.cartTitle {
     display: flex;
     justify-content: center;
 }
+
+.setFavoriteButton:hover{
+    background-color: red;
+}
+
+.deleteFromCart:hover{
+    background-color: orange;
+}

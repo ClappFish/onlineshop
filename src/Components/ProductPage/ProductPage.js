@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Headermenu/Header";
+import Header from "../Navbar/Header";
 
 function ProductPage() {
     return (
