@@ -7,6 +7,8 @@ import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
 import * as constUrl from "../../UrlHandler";
 import {MdRemoveShoppingCart} from "react-icons/md";
 import {IoHeartOutline} from "react-icons/io5";
+import checkout from "../Pictures/Chekoutitem.png";
+import {Link} from "react-router-dom";
 
 function Cart() {
     const data_api_uri = constUrl.data_api_uri;
@@ -58,6 +60,9 @@ function Cart() {
                     text="Your Cart:"
                 />
             </div>
+            <Link to="/checkout">
+                <img src={checkout} className="IconCart" alt="cart"/>
+            </Link>
             <div className="allProducts">
                 {cartProducts.map(product => {
                         return (

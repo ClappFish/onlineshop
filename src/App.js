@@ -15,6 +15,7 @@ import {
 import Login from "./Components/Startpages/Login";
 import Register from "./Components/Startpages/Register";
 import Favorites from "./Components/Favorites/Favorites";
+import Checkout from "./Components/Checkoutpage/Checkout";
 
 export function App() {
 
@@ -35,6 +36,9 @@ export function App() {
         return (
             <Router>
                 <Switch>
+                    <Route path="/checkout">
+                        <Checkout/>
+                    </Route>
                     <Route path="/profile">
                         <Profile/>
                     </Route>
