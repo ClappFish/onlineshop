@@ -1,0 +1,25 @@
+.allProducts{
+    width: 100%;
+}
+.productName{
+    margin: 0;
+}
+.productPrice{
+    margin: 0;
+}
+
+.placeholderProduct{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+}
+.checkoutProducts{
+    display: inline-block;
+    width: 100%;
+}
+
+.summe{
+    display: flex;
+    justify-content: center;
+}
