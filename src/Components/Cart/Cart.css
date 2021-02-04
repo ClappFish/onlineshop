@@ -3,6 +3,20 @@ h1.cartTitle {
     justify-content: center;
 }
 
+.IconCart{
+    padding-top: 100px;
+    position: fixed;
+    font-size: 8pt;
+    margin-top: 1px;
+    margin-right: 2%;
+    top:0;
+    right:0;
+}
+
+.IconCart:hover{
+    background-color: orange;
+}
+
 .setFavoriteButton:hover{
     background-color: red;
 }
