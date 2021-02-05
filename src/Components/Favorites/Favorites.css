@@ -50,10 +50,7 @@
 .productName{
     display: inline;
     width: 40%;
-    margin-left: 5%;
 }
 .productPrice{
-    margin-left: 5%;
-    margin-right: 15%;
     width: 30%;
 }

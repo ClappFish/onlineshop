@@ -62,7 +62,7 @@ function Overview() {
                                 <Link to="/product">
                                     <img className="productImage" src={TestImage} alt="img"/>
                                 </Link>
-                                <h2>
+                                <h2 className="productData">
                                     <div className="productName">{product.productName}</div>
                                     <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)}/>
                                     <IoCartOutline className="addToCart" onClick={() => addToCart(product)}/>

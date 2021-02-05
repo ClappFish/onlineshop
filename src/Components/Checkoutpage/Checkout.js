@@ -34,7 +34,7 @@ function Checkout(){
                 {cartProducts.map(product => {
                     return (
                             <h2>
-                                <div key={product.productId} className="placeholderProduct">
+                                <div key={product.productId} className="placeholderProductCheckout">
                                 <div className="productName">{product.productName}</div>
                                 <div className="productPrice">{product.productPrice} €</div>
                                 </div>

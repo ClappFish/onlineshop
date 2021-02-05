@@ -3,6 +3,10 @@ h1.cartTitle {
     justify-content: center;
 }
 
+h2.productData{
+    margin-left: 30px;
+}
+
 .IconCart{
     padding-top: 100px;
     position: fixed;

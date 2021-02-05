@@ -68,7 +68,7 @@ function Cart() {
                         return (
                             <div key={product.productId} className="placeholderProduct">
                                 <img className="productImage" src={TestImage} alt="img"/>
-                                <h2>
+                                <h2 className="productData">
                                     <div className="productName">{product.productName}</div>
                                     <IoHeartOutline className="setFavoriteButton" onClick={() => setFavorite(product)}/>
                                     <MdRemoveShoppingCart className="deleteFromCart" onClick={() => deleteFromCart(product)}/>

@@ -60,7 +60,7 @@ function Favorites() {
                         return (
                             <div key={product.productId} className="placeholderProduct">
                                 <img className="productImage" src={TestImage} alt="img"/>
-                                <h2>
+                                <h2 className="productData">
                                     <div className="productName">{product.productName}</div>
                                     <div className="productStateButton">
                                         <IoHeartDislikeOutline className="setUnFavoriteButton" onClick={() => setUnFavorite(product)}/>
