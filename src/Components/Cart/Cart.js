@@ -17,6 +17,7 @@ function Cart() {
     const userId = getUserId();
 
     const [cartProducts, setCartProducts] = React.useState([])
+    const [checkoutData, setCheckoutData] = React.useState("")
 
     useEffect(() => {
         getCartProducts()
@@ -27,10 +28,12 @@ function Cart() {
         axios.get(`http://${data_api_uri}:${data_api_port}/${userId}/getcart`).then((response) => {
             setCartProducts(response.data);
         })
+        axios.get(`http://${data_api_uri}:${data_api_port}/${userId}/getcheckoutdata`).then((response) => {
+            setCheckoutData(response.data)
+        })
     }
 
     function Headline(props) {
-        console.log(props.text);
         return <h1 className="headline">{props.text}</h1>;
     }
 
@@ -79,6 +82,9 @@ function Cart() {
                         )
                     }
                 )}
+                <h2 className="summe">
+                    Summe: {checkoutData} €
+                </h2>
             </div>
         </div>
     )
