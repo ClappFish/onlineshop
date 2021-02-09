@@ -37,7 +37,7 @@ export function App() {
         return (
             <Router>
                 <Switch>
-                    <Route path="/admin/productmanagement">
+                    <Route path="/productmanagement">
                         <ProductManagement/>
                     </Route>
                     <Route path="/checkout">
