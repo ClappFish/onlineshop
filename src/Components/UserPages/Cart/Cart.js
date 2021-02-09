@@ -1,13 +1,13 @@
 import React, {useEffect} from "react";
 import axios from "axios";
 import "./Cart.css";
-import {getUserId} from "../../UserIdHandler";
+import {getUserId} from "../../../UserIdHandler";
 import Header from "../Navbar/Header";
-import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
-import * as constUrl from "../../UrlHandler";
+import TestImage from "../../Pictures/Christmas-cactus-1-580x386.jpg";
+import * as constUrl from "../../../UrlHandler";
 import {MdRemoveShoppingCart} from "react-icons/md";
 import {IoHeartOutline} from "react-icons/io5";
-import checkout from "../Pictures/Chekoutitem.png";
+import checkout from "../../Pictures/Chekoutitem.png";
 import {Link} from "react-router-dom";
 
 function Cart() {

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import {useCookies} from "react-cookie";
 import axios from "axios";
-import {getUserId} from "../../UserIdHandler";
+import {getUserId} from "../../../UserIdHandler";
 import './Pofile.css'
 import Header from "../Navbar/Header";
-import * as constUrl from "../../UrlHandler";
+import * as constUrl from "../../../UrlHandler";
 
 function Profile(){
 

@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
 import "./Overview.css";
 import {Link} from "react-router-dom";
-import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
+import TestImage from "../../Pictures/Christmas-cactus-1-580x386.jpg";
 import Header from "../Navbar/Header";
-import {getUserId} from "../../UserIdHandler";
-import cart from "../Pictures/shopping-cart-outline_icon-icons.com_56126.png";
+import {getUserId} from "../../../UserIdHandler";
+import cart from "../../Pictures/shopping-cart-outline_icon-icons.com_56126.png";
 import axios from "axios";
-import * as constUrl from "../../UrlHandler";
+import * as constUrl from "../../../UrlHandler";
 import {IoCartOutline, IoHeartOutline} from "react-icons/io5";
 
 function Overview() {

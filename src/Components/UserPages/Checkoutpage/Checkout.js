@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
-import "../../UrlHandler";
+import "../../../UrlHandler";
 import "./Checkout.css";
-import * as constUrl from "../../UrlHandler";
+import * as constUrl from "../../../UrlHandler";
 import Header from "../Navbar/Header";
 import axios from "axios";
-import {getUserId} from "../../UserIdHandler";
+import {getUserId} from "../../../UserIdHandler";
 
 function Checkout(){
     const data_api_uri = constUrl.data_api_uri;

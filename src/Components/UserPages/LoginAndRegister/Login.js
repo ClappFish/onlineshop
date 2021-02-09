@@ -1,38 +1,33 @@
 import React from "react";
-import loginImg from "../Pictures/login.svg"
+import loginImg from "../../Pictures/login.svg"
 import './style.scss';
-import '../../App.scss';
+import '../../../App.scss';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import {useCookies} from "react-cookie";
-import * as constUrl from "../../UrlHandler";
+import * as constUrl from "../../../UrlHandler";
 
-function Register() {
 
+function Login({setLoggedIn}) {
     const data_api_uri = constUrl.data_api_uri;
     const data_api_port = constUrl.data_api_port;
 
-    const [userName, setUserName] = React.useState("")
     const [eMail, setEMail] = React.useState("")
     const [password, setPassword] = React.useState("")
 
-    const [,, removeCookie] = useCookies();
-
-
-    function addUser() {
-        removeCookie("userId", {path:'/'})
-        axios.post(`http://${data_api_uri}:${data_api_port}/adduser`, {
-            userName: userName,
+    function checkUser() {
+        console.log(data_api_uri, data_api_port)
+        axios.post(`http://${data_api_uri}:${data_api_port}/checkuser`, {
+            userName: "DefaultUserName",
             eMail: eMail,
             password: password,
-        }).then((response) => {console.log(response)})
-        alert("successfull registered");
-        window.location.href = "/";
+        }).then((response) => {
+                setLoggedIn(response.data);
+        }).catch(() => window.alert("Falsche Zugangsdaten"))
     }
 
     return (
         <div className="base-container">
-            <div className="header">Register</div>
+            <div className="header">Login</div>
             <div className="content">
                 <div className="image">
                     <img src={loginImg} alt={""}/>
@@ -40,23 +35,12 @@ function Register() {
                 <div className="form">
                     <form className="userNameInput">
                         <div className="form-group">
-                            <label>Username</label>
-                            <input
-                                type="name"
-                                className="input"
-                                value={userName}
-                                placeholder="Your Name"
-                                autoComplete="name"
-                                onChange={e => setUserName(e.target.value)}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>Email</label>
+                            <label>Email address</label>
                             <input
                                 type="email"
                                 className="input"
                                 value={eMail}
-                                placeholder="E-Mail"
+                                placeholder="Enter email"
                                 autoComplete="email"
                                 onChange={e => setEMail(e.target.value)}
                             />
@@ -68,7 +52,7 @@ function Register() {
                                 className="input"
                                 value={password}
                                 placeholder="Password"
-                                autoComplete="new-password"
+                                autoComplete="current-password"
                                 onChange={e => setPassword(e.target.value)}
                             />
                         </div>
@@ -76,14 +60,15 @@ function Register() {
                 </div>
             </div>
             <div className="footer">
-                <button className="btn" onClick={() => {addUser()}} >
-                    Register
+                <button className="btn" onClick={() => {checkUser()}} >
+                    Login
                 </button>
                 <p/>
+                <p/>
             </div>
-            <Link to="/" className="toLogin">Click here to Login!</Link>
+            <Link to="/reg." className="toRegister">Click here to Register!</Link>
         </div>
     );
 }
 
-export default Register;
+export default Login;

@@ -1,33 +1,38 @@
 import React from "react";
-import loginImg from "../Pictures/login.svg"
+import loginImg from "../../Pictures/login.svg"
 import './style.scss';
-import '../../App.scss';
+import '../../../App.scss';
 import axios from "axios";
 import {Link} from "react-router-dom";
-import * as constUrl from "../../UrlHandler";
+import {useCookies} from "react-cookie";
+import * as constUrl from "../../../UrlHandler";
 
+function Register() {
 
-function Login({setLoggedIn}) {
     const data_api_uri = constUrl.data_api_uri;
     const data_api_port = constUrl.data_api_port;
 
+    const [userName, setUserName] = React.useState("")
     const [eMail, setEMail] = React.useState("")
     const [password, setPassword] = React.useState("")
 
-    function checkUser() {
-        console.log(data_api_uri, data_api_port)
-        axios.post(`http://${data_api_uri}:${data_api_port}/checkuser`, {
-            userName: "DefaultUserName",
+    const [,, removeCookie] = useCookies();
+
+
+    function addUser() {
+        removeCookie("userId", {path:'/'})
+        axios.post(`http://${data_api_uri}:${data_api_port}/adduser`, {
+            userName: userName,
             eMail: eMail,
             password: password,
-        }).then((response) => {
-                setLoggedIn(response.data);
-        }).catch(() => window.alert("Falsche Zugangsdaten"))
+        }).then((response) => {console.log(response)})
+        alert("successfull registered");
+        window.location.href = "/";
     }
 
     return (
         <div className="base-container">
-            <div className="header">Login</div>
+            <div className="header">Register</div>
             <div className="content">
                 <div className="image">
                     <img src={loginImg} alt={""}/>
@@ -35,12 +40,23 @@ function Login({setLoggedIn}) {
                 <div className="form">
                     <form className="userNameInput">
                         <div className="form-group">
-                            <label>Email address</label>
+                            <label>Username</label>
+                            <input
+                                type="name"
+                                className="input"
+                                value={userName}
+                                placeholder="Your Name"
+                                autoComplete="name"
+                                onChange={e => setUserName(e.target.value)}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Email</label>
                             <input
                                 type="email"
                                 className="input"
                                 value={eMail}
-                                placeholder="Enter email"
+                                placeholder="E-Mail"
                                 autoComplete="email"
                                 onChange={e => setEMail(e.target.value)}
                             />
@@ -52,7 +68,7 @@ function Login({setLoggedIn}) {
                                 className="input"
                                 value={password}
                                 placeholder="Password"
-                                autoComplete="current-password"
+                                autoComplete="new-password"
                                 onChange={e => setPassword(e.target.value)}
                             />
                         </div>
@@ -60,15 +76,14 @@ function Login({setLoggedIn}) {
                 </div>
             </div>
             <div className="footer">
-                <button className="btn" onClick={() => {checkUser()}} >
-                    Login
+                <button className="btn" onClick={() => {addUser()}} >
+                    Register
                 </button>
                 <p/>
-                <p/>
             </div>
-            <Link to="/reg." className="toRegister">Click here to Register!</Link>
+            <Link to="/" className="toLogin">Click here to Login!</Link>
         </div>
     );
 }
 
-export default Login;
+export default Register;

@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
 import axios from "axios";
 import "./Favorites.css";
-import {getUserId} from "../../UserIdHandler";
+import {getUserId} from "../../../UserIdHandler";
 import Header from "../Navbar/Header";
-import TestImage from "../Pictures/Christmas-cactus-1-580x386.jpg";
-import * as constUrl from "../../UrlHandler";
+import TestImage from "../../Pictures/Christmas-cactus-1-580x386.jpg";
+import * as constUrl from "../../../UrlHandler";
 import {IoCartOutline, IoHeartDislikeOutline} from "react-icons/io5";
 
 function Favorites() {
