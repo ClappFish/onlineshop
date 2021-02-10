@@ -4,7 +4,7 @@ import Header from "../../UserPages/Navbar/Header"
 import * as constUrl from "../../../UrlHandler";
 import axios from "axios";
 
-function ProductManagement(){
+function ProductManagement() {
 
     const data_api_uri = constUrl.data_api_uri;
     const data_api_port = constUrl.data_api_port;
@@ -13,44 +13,51 @@ function ProductManagement(){
     const [productPrice, setProductPrice] = React.useState("")
 
 
-    function addProduct(){
-        axios.post(`http://${data_api_uri}:${data_api_port}/admin/addProduct`,{
+    function addProduct() {
+        axios.post(`http://${data_api_uri}:${data_api_port}/productmanagement/add`, {
             productName: productName,
             productPrice: productPrice,
-        }).then((response) => {console.log(response)})
+        }).then((response) => {
+            console.log(response)
+        })
     }
 
-    return(
-        <div className="ProductManagementContainer">
+    return (
+        <div className="mainContainer">
             <div className="Header">
                 <Header/>
             </div>
-            <div className="form">
-                <form>
-                    <div className="form-group">
-                        <label>ProductName</label>
-                        <input
-                            type="text"
-                            className="input"
-                            value={productName}
-                            placeholder="Product Name: "
-                            onChange={e => setProductName(e.target.value)}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>ProductPrice</label>
-                        <input
-                            type="text"
-                            className="input"
-                            value={productPrice}
-                            placeholder="Product Name: "
-                            onChange={e => setProductPrice(e.target.value)}
-                        />
-                    </div>
-                </form>
-                <button className="addProduct" onClick={() => {addProduct()}}>
-                    Add the Product
-                </button>
+            <div className="ProductManagementContainer">
+                <h1 className="productManagementHeader">Add a new Produduct</h1>
+                <div className="form">
+                    <form>
+                        <div className="form-group">
+                            <label>ProductName</label>
+                            <input
+                                type="text"
+                                className="input"
+                                value={productName}
+                                placeholder="Product Name: "
+                                onChange={e => setProductName(e.target.value)}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>ProductPrice</label>
+                            <input
+                                type="text"
+                                className="input"
+                                value={productPrice}
+                                placeholder="Product Name: "
+                                onChange={e => setProductPrice(e.target.value)}
+                            />
+                        </div>
+                    </form>
+                    <button className="addProduct" onClick={() => {
+                        addProduct()
+                    }}>
+                        Add the Product
+                    </button>
+                </div>
             </div>
         </div>
     )
