@@ -22,42 +22,52 @@ function ProductManagement() {
         })
     }
 
+    function Headline(props) {
+        console.log(props.text);
+        return <h1 className="headline">{props.text}</h1>;
+    }
+
     return (
-        <div className="mainContainer">
-            <div className="Header">
-                <Header/>
-            </div>
-            <div className="ProductManagementContainer">
-                <h1 className="productManagementHeader">Add a new Produduct</h1>
-                <div className="form">
-                    <form>
-                        <div className="form-group">
-                            <label>ProductName</label>
-                            <input
-                                type="text"
-                                className="input"
-                                value={productName}
-                                placeholder="Product Name: "
-                                onChange={e => setProductName(e.target.value)}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>ProductPrice</label>
-                            <input
-                                type="text"
-                                className="input"
-                                value={productPrice}
-                                placeholder="Product Name: "
-                                onChange={e => setProductPrice(e.target.value)}
-                            />
-                        </div>
-                    </form>
-                    <button className="addProduct" onClick={() => {
-                        addProduct()
-                    }}>
-                        Add the Product
-                    </button>
+        <div>
+            <div>
+                <div>
+                    <Header/>
                 </div>
+                <br/>
+                <br/>
+                <br/>
+                <Headline
+                    text="Add a new Product"
+                />
+            </div>
+            <div className="OverviewProductManagement">
+                <form>
+                    <div className="form-group">
+                        <label>ProductName: </label>
+                        <input
+                            type="text"
+                            className="input"
+                            value={productName}
+                            placeholder="Product Name: "
+                            onChange={e => setProductName(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>ProductPrice: </label>
+                        <input
+                            type="text"
+                            className="input"
+                            value={productPrice}
+                            placeholder="Product Price: "
+                            onChange={e => setProductPrice(e.target.value)}
+                        />
+                    </div>
+                </form>
+                <button className="addProduct" onClick={() => {
+                    addProduct()
+                }}>
+                    Add the Product
+                </button>
             </div>
         </div>
     )
